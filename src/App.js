@@ -1,9 +1,10 @@
 import React from 'react';
 import './App.css';
 import Header from './components/header/HeaderIndex';
-import  Introduction  from './components/introduction/IntrodutionIndex';
+import Introduction from './components/introduction/IntrodutionIndex';
 import About from './components/about/AboutIndex';
 import Skill from './components/skill/SkillIndex';
+import Education from './components/education/EducationIndex';
 
 function App() {
   return (
@@ -12,6 +13,7 @@ function App() {
       <Introduction />
       <About />
       <Skill />
+      <Education />
     </>
   );
 }
