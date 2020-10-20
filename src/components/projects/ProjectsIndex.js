@@ -1,5 +1,6 @@
-import React from 'react';
+import React, { useState } from 'react';
 import styled from 'styled-components';
+import ComponentProject from './ComponentProject';
 
 export const ContainerDiv = styled.div`
     background-color: #f2f2f2;
@@ -20,8 +21,8 @@ export const Title = styled.div`
     color: #45525b;
 `;
 
-export const Projects = styled.div`
-    display: flex;
+export const ProjectsContent = styled.div`
+    display: grid;
     place-content: center;
 `;
 
@@ -42,18 +43,35 @@ export const ButtonMorePj = styled.button`
     text-align: center;
     color: #ffffff;
     margin-bottom: 42px;
+    cursor: pointer;
     :hover{
         background-color: #d97824;
     }
 `;
 
-const projects = () => {
+export const ButtonDiv = styled.div`
+    display: flex;
+    place-content: center;
+    padding-top: 48px;
+`;
+
+const Projects = () => {
+    const [project, setProject] = useState({
+        name: 'Labephoto',
+        type: 'FullStack',
+        linkBack: 'https://github.com/arturmmagalhaes/LabePhotos_backend',
+        linkFront: 'https://github.com/arturmmagalhaes/LabePhotos_frontend'
+    });
+
     return(<ContainerDiv>
         <Title>Meus projetos</Title>
-        <Projects>
+        <ProjectsContent>
+            <ComponentProject project={project}/>
+        </ProjectsContent>
+        <ButtonDiv>
             <ButtonMorePj>Mais projetos</ButtonMorePj>
-        </Projects>
+        </ButtonDiv>
     </ContainerDiv>);
 }
 
-export default projects;
+export default Projects;
