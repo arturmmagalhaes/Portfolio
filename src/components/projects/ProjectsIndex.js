@@ -56,17 +56,28 @@ export const ButtonDiv = styled.div`
 `;
 
 const Projects = () => {
-    const [project, setProject] = useState({
-        name: 'Labephoto',
-        type: 'FullStack',
-        linkBack: 'https://github.com/arturmmagalhaes/LabePhotos_backend',
-        linkFront: 'https://github.com/arturmmagalhaes/LabePhotos_frontend'
-    });
+    const [project] = useState([
+        {
+            name: 'Labephoto',
+            type: 'FullStack',
+            linkBack: 'https://github.com/arturmmagalhaes/LabePhotos_backend',
+            linkFront: 'https://github.com/arturmmagalhaes/LabePhotos_frontend',
+            color: '#8d1c31'
+        },{
+            name: 'Task',
+            type: 'FullStack',
+            linkBack: 'https://github.com/arturmmagalhaes/Task/tree/main/taskBackend',
+            linkFront: 'https://github.com/arturmmagalhaes/Task/tree/main/taskFrontend',
+            color: '#33a6a6'
+        }
+    ]);
 
     return(<ContainerDiv>
         <Title>Meus projetos</Title>
         <ProjectsContent>
-            <ComponentProject project={project}/>
+            {project.map(item =>  {
+                return (<ComponentProject project={item}/>)
+            })}
         </ProjectsContent>
         <ButtonDiv>
             <ButtonMorePj>Mais projetos</ButtonMorePj>

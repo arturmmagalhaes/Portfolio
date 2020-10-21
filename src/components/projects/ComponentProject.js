@@ -12,7 +12,6 @@ export const ContentDiv = styled.div`
     font-style: normal;
     line-height: normal;
     letter-spacing: -0.25px;
-    color: #8d1c31;
     :hover{
 
     }
@@ -29,7 +28,6 @@ export const Title = styled.div`
     font-style: normal;
     line-height: normal;
     letter-spacing: -0.25px;
-    color: #8d1c31;
 `;
 
 export const Links = styled.div`
@@ -73,18 +71,13 @@ export const Link = styled.a`
 const ComponentProject = (props) => {
     return(<ContainerDiv>
         <ComputerIcon style={{fontSize: '160px'}}/>
-        <ContentDiv>
+        <ContentDiv  style={{color: `${props.project.color}`}}>
             <Title>{props.project.name}</Title>
             <div>Aplicação {props.project.type}</div>
             {props.project.type === 'FullStack' && <>
                 <Links>
-                    <div style={{textAlign: 'center'}}>Backend</div>
-                    {//props.project.linkBack}
-}
-                    
-                    <div style={{textAlign: 'center'}}>Frontend</div>
-                    {//props.project.linkFront}
-}                   
+                    <div style={{textAlign: 'center'}}>Backend</div>              
+                    <div style={{textAlign: 'center'}}>Frontend</div>          
                     <ButtonMorePj><Link href={props.project.linkBack} >Ver no GitHub</Link></ButtonMorePj>
                     <ButtonMorePj><Link href={props.project.linkBack} >Ver no GitHub</Link></ButtonMorePj>
                 </Links>
