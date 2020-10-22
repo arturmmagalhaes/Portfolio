@@ -55,6 +55,15 @@ export const ButtonDiv = styled.div`
     padding-top: 48px;
 `;
 
+export const Link = styled.a`
+    text-decoration: none;
+    :visited{
+        color: white;
+        text-decoration: none;
+    }
+`;
+
+
 const Projects = () => {
     const [project] = useState([
         {
@@ -69,7 +78,12 @@ const Projects = () => {
             linkBack: 'https://github.com/arturmmagalhaes/Task/tree/main/taskBackend',
             linkFront: 'https://github.com/arturmmagalhaes/Task/tree/main/taskFrontend',
             color: '#33a6a6'
-        }
+        },{
+            name: '4food',
+            type: 'Frontend',
+            linkFront: 'https://github.com/arturmmagalhaes/4food',
+            color: '#d97824'
+        },
     ]);
 
     return(<ContainerDiv>
@@ -80,7 +94,9 @@ const Projects = () => {
             })}
         </ProjectsContent>
         <ButtonDiv>
+        <Link href='https://github.com/arturmmagalhaes' target='blank'>
             <ButtonMorePj>Mais projetos</ButtonMorePj>
+        </Link>
         </ButtonDiv>
     </ContainerDiv>);
 }
