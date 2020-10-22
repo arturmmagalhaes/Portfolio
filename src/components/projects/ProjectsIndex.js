@@ -1,5 +1,6 @@
-import React from 'react';
+import React, { useState } from 'react';
 import styled from 'styled-components';
+import ComponentProject from './ComponentProject';
 
 export const ContainerDiv = styled.div`
     background-color: #f2f2f2;
@@ -20,8 +21,8 @@ export const Title = styled.div`
     color: #45525b;
 `;
 
-export const Projects = styled.div`
-    display: flex;
+export const ProjectsContent = styled.div`
+    display: grid;
     place-content: center;
 `;
 
@@ -42,18 +43,62 @@ export const ButtonMorePj = styled.button`
     text-align: center;
     color: #ffffff;
     margin-bottom: 42px;
+    cursor: pointer;
     :hover{
         background-color: #d97824;
     }
 `;
 
-const projects = () => {
+export const ButtonDiv = styled.div`
+    display: flex;
+    place-content: center;
+    padding-top: 48px;
+`;
+
+export const Link = styled.a`
+    text-decoration: none;
+    :visited{
+        color: white;
+        text-decoration: none;
+    }
+`;
+
+
+const Projects = () => {
+    const [project] = useState([
+        {
+            name: 'Labephoto',
+            type: 'FullStack',
+            linkBack: 'https://github.com/arturmmagalhaes/LabePhotos_backend',
+            linkFront: 'https://github.com/arturmmagalhaes/LabePhotos_frontend',
+            color: '#8d1c31'
+        },{
+            name: 'Task',
+            type: 'FullStack',
+            linkBack: 'https://github.com/arturmmagalhaes/Task/tree/main/taskBackend',
+            linkFront: 'https://github.com/arturmmagalhaes/Task/tree/main/taskFrontend',
+            color: '#33a6a6'
+        },{
+            name: '4food',
+            type: 'Frontend',
+            linkFront: 'https://github.com/arturmmagalhaes/4food',
+            color: '#d97824'
+        },
+    ]);
+
     return(<ContainerDiv>
         <Title>Meus projetos</Title>
-        <Projects>
+        <ProjectsContent>
+            {project.map(item =>  {
+                return (<ComponentProject project={item}/>)
+            })}
+        </ProjectsContent>
+        <ButtonDiv>
+        <Link href='https://github.com/arturmmagalhaes' target='blank'>
             <ButtonMorePj>Mais projetos</ButtonMorePj>
-        </Projects>
+        </Link>
+        </ButtonDiv>
     </ContainerDiv>);
 }
 
-export default projects;
+export default Projects;
