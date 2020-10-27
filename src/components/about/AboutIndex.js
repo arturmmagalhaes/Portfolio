@@ -74,7 +74,7 @@ const about = () => {
     return(<ContainerDiv>
         <AboutMeDiv>
             <Title>Sobre mim</Title>
-            <Text>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</Text>
+            <Text>Moro em Fortaleza e fiz a graduação em ciência da computação na Universidade Estadual do Ceará. Utilizei bastante C e Java para os trabalhos acadêmicos. Porém, mais para o final do curso, comecei a conhecer Python. Meu primeiro contato com Python foi em um trabalho de programação paralela e concorrente e após este trabalho continuei programando em Python, usando no trabalho de conclusão de curso e, posteriormente, chegando até a auxiliar nos estudos de análise de dados. No começo de 2020, quis me aprofundar em programação Web e concluir um curso de Full-Stack developer.</Text>
             <StacksDiv>| Javascript | Typescript | React | HTML | CSS | MySQL | </StacksDiv>
             <Button>CV em PDF</Button>
         </AboutMeDiv>
